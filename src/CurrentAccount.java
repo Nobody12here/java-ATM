@@ -7,7 +7,7 @@ public class CurrentAccount extends Account {
     }
 
     @Override
-    public void withdrawAmount(double amount) {
+    public void withdrawAmount(double amount )throws InvalidAmountException {
         if (accountBalance + amount > withdrawLimit) {
             throw new InvalidAmountException("Amount exceeds the withdraw limit !");
 

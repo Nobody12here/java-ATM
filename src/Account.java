@@ -12,7 +12,7 @@ public class Account {
         this.accountNumber = accountNumber;
     }
 
-    public void depositFunds(double amount) {
+    public void depositFunds(double amount) throws InvalidAmountException {
         if (amount <= 0) {
             throw new InvalidAmountException("Amount must be greated then zero");
         }
@@ -20,7 +20,7 @@ public class Account {
         System.out.println("Amount deposited \nCurrent Balance now is: " + accountBalance);
     }
 
-    public void withdrawAmount(double amount) {
+    public void withdrawAmount(double amount) throws InvalidAmountException {
         if ((accountBalance - amount) < 0) {
             throw new InvalidAmountException("Amount Exceeds Balance");
         }
